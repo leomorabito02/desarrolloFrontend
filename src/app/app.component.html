@@ -1,22 +1,14 @@
 <div class="container">
-  <div class="side-bar">
-    <!-- Added links to redirect to what ever page I need to in the side bar-->
-    @for (item of items; track $index) {
-      <a
-        class="side-bar-item"
-        [routerLink]="item.route"
-        routerLinkActive="selected"
-        
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        {{ item.label }}
-      </a>
-    }
-  </div>
+  <nav class="navbar">
+    <a routerLink="/home" routerLinkActive="active-link" class="nav-link">Home</a>
+    <a routerLink="/profiles" routerLinkActive="active-link" class="nav-link">Profiles</a>
+    <a routerLink="/projects" routerLinkActive="active-link" class="nav-link">Projects</a>
+    <a routerLink="/contact" routerLinkActive="active-link" class="nav-link">Contact</a>
+  </nav>
   <div class="main-content">
-    <!-- 
+    <!--
     [hidden]="item.authRequired && !loginService.isLoggedIn()" in line 9
-    Router outlet allows to display a component depending on the route. 
+    Router outlet allows to display a component depending on the route.
      This depends on the routes added in the app routes file-->
     <router-outlet></router-outlet>
   </div>

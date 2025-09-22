@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HomeComponent } from "./pages/home/home";
+import { Profiles } from './pages/profiles/profiles';
 //import { LoginService } from './services/login-service';
 
 @Component({
@@ -7,8 +9,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   imports: [
     RouterOutlet,
     RouterLink,
-    RouterLinkActive
-  ],
+    RouterLinkActive,
+    HomeComponent,
+    Profiles
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,7 +23,7 @@ export class AppComponent {
   selector = 'Home';
   items = [
     { label: "Home", route: "", authRequired: false },
-    { label: "Profiles", route: "/profiles", authRequired: true },
+    { label: "Profiles", route: "/profiles", authRequired: false },
    // { label: "Simple Component", route: "/simple-component", authRequired: true },
    // { label: "Using typescript in html", route: "/using-typescript-in-html", authRequired: true },
    // { label: "Component inside component", route: "/component-inside-component", authRequired: true },
